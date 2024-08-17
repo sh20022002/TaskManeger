@@ -1,0 +1,24 @@
+/* ToDosItem.css */
+.button-style {
+    background-color: #4c70af; /* Blue */
+    border: blue; /* Remove border */
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    clip-path: ellipse(); /* Diamond shape */
+}
+
+.input-style {
+    background-color: white;
+    color: black;
+    text-align: left;
+    font-size: large;
+    margin: auto;
+    cursor: pointer;
+ /* Elliptical shape */
+}
