@@ -1,4 +1,4 @@
-import ToDo from "./componets/ToDo";
+import Maneger from "./src/componets/maneger";
 
 export default function App() {
 
@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div>
       <h1>Task Manager</h1>
-      <ToDo />
+      <Maneger/>
     </div>
   );
 };

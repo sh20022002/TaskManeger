@@ -1,0 +1,77 @@
+
+/* TaskManager.module.css */
+
+.taskManager {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .buttonGroup {
+    margin-bottom: 20px;
+  }
+  
+  .addButton {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .addButton:hover {
+    opacity: 0.9;
+  }
+  
+  .tasksContainer {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .taskItem {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .deleteButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .deleteButton svg {
+    fill: red;
+  }
+  
+  .taskText {
+    cursor: pointer;
+  }
+  
+  .taskText:hover {
+    color: green;
+  }
+  
