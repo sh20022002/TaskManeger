@@ -1,12 +1,11 @@
-import Maneger from "./src/componets/maneger";
+import TaskManager from "./componets/TaskManager";
 
 export default function App() {
 
 
   return (
     <div>
-      <h1>Task Manager</h1>
-      <Maneger/>
+      <TaskManager/>
     </div>
   );
 };

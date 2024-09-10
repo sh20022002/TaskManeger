@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from '../css/TaskManager.module.css'; // CSS module for Task Manager styles
-import { ReactComponent as DeleteIcon } from '../assets/Trash.svg'; // SVG delete icon
 
 const TaskManager = () => {
   const [taskInput, setTaskInput] = useState('');
@@ -22,7 +21,7 @@ const TaskManager = () => {
     // Add the new task to the list
     setTasks((prevTasks) => [
       ...prevTasks,
-      { id: Date.now(), task, completed: false }
+      { id: Date.now(), task }
     ]);
 
     // Clear the input field after adding the task
@@ -35,18 +34,10 @@ const TaskManager = () => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
-  // Toggle task completion
-  const toggleTaskCompletion = (id) => {
-    setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
-  };
-
   return (
     <div className={styles.taskManager}>
-      <h2 className={styles['text-color']}>Task Manager</h2>
+      
+      {/* Input for new task */}
       <input
         type="text"
         value={taskInput}
@@ -55,8 +46,8 @@ const TaskManager = () => {
         className={styles.inputField}
       />
 
-      {/* Button to Add Task */}
-      <div className={styles.buttonGroup}>
+      {/* Button to add task */}
+      <div className={`${styles.buttonGroup}`}>
         <button className={styles.addButton} onClick={addTask}>
           Add Task
         </button>
@@ -67,15 +58,12 @@ const TaskManager = () => {
         {tasks.map((task) => (
           <div
             key={task.id}
-            className={`${styles.taskItem} ${task.completed ? styles.completed : ''}`}
+            className={styles.taskItem} // Style to look like a button
+            onClick={() => deleteTask(task.id)} // Delete task on click
+            role="button" // Accessible as a button for screen readers
+            tabIndex="0" // Make it focusable like a button
           >
-            <span onClick={() => toggleTaskCompletion(task.id)} className={styles.taskText}>
-              {task.task}
-            </span>
-            {/* Delete Button with Icon */}
-            <button className={styles.deleteButton} onClick={() => deleteTask(task.id)}>
-              <DeleteIcon width="16px" height="16px" />
-            </button>
+            {task.task}
           </div>
         ))}
       </div>
